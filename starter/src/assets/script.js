@@ -85,29 +85,30 @@ function increaseQuantity(productId){
     console.log("ruvvvv")
   }
 }
-// increaseQuantity(100)
+increaseQuantity(100)
+
 /* Create a function named decreaseQuantity that takes in the productId as an argument
   - decreaseQuantity should get the correct product based on the productId
   - decreaseQuantity should decrease the quantity of the product
   - if the function decreases the quantity to 0, the product is removed from the cart
 */
 function decreaseQuantity(productId){
-  // if(productId === productOne.productId){
-  //   productOne.quantity-=1
-  // }
-  // else if(productId === productTwo.productId){
-  //   productTwo.quantity-=1
-  // }
-  // else if (productId === productThree.productId){
-  //   productThree.quantity-=1
-  // }
+  if(productId === productOne.productId){
+    productOne.quantity-=1
+  }
+  else if(productId === productTwo.productId){
+    productTwo.quantity-=1
+  }
+  else if (productId === productThree.productId){
+    productThree.quantity-=1
+  }
    
-  //   else{
-  //       console.log("ruvvvv")
+    else{
+        console.log("ruvvvv")
       
-  //   }
+    }
 
-    if (productOne.quantity===1){
+    if (productOne.quantity===0){
       cart.pop()
     }
 }
@@ -121,22 +122,28 @@ decreaseQuantity(100)
   - removeProductFromCart should update the product quantity to 0
   - removeProductFromCart should remove the product from the cart
 */
-// function removeProductFromCart(productId){
-//   quantity = 0
-//   cart.pop()
-// }
+function removeProductFromCart(productId){
+   products.quantity =0
+  cart.pop()
+}
 /* Create a function named cartTotal that has no parameters
   - cartTotal should iterate through the cart to get the total of all products
   - cartTotal should return the sum of the products in the cart
 */
-
+function cartTotal(){
+  // The whole of the buttons only started working after i declared the cartTotal Function
+}
 /* Create a function called emptyCart that empties the products from the cart */
+function emptyCart(){
 
+}
 /* Create a function named pay that takes in an amount as an argument
   - pay will return a negative number if there is a remaining balance
   - pay will return a positive number if money should be returned to customer
 */
+function pay(){
 
+}
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
 
 
@@ -157,5 +164,5 @@ module.exports = {
    pay, 
    emptyCart,
    /* Uncomment the following line if completing the currency converter bonus */
-   // currency
+  //  currency
 }
