@@ -8,29 +8,29 @@
    - productId: unique id for the product (number)
    - image: picture of product (url string)
 */
-const productOne = {
+let productOne = {
   name: "Carton of Cherries", 
   price: 4,
   quantity: 0,
   productId: 100,
   image: 'images/cherry.jpg'
 };
-const productTwo = {
+let productTwo = {
   name: "Carton of Strawberries", 
   price: 5,
   quantity: 0,
   productId: 101,
   image: 'images/strawberry.jpg'
 };
-const productThree = {
+let productThree = {
   name: "Bag of Oranges", 
   price: 10,
   quantity: 0,
-  productId: 103,
+ productId : 102,
   image: 'images/orange.jpg'
 };
 /* Create an array named products which you will use to add all of your product object literals that you create in the next step. */
-const products = [productOne,productTwo,productThree]
+let products = [productOne,productTwo,productThree]
 
 /* Images provided in /images folder. All images from Unsplash.com
    - cherry.jpg by Mae Mu
@@ -39,36 +39,83 @@ const products = [productOne,productTwo,productThree]
 */
 
 /* Declare an empty array named cart to hold the items in the cart */
-const cart = []
+ let cart = []
 /* Create a function named addProductToCart that takes in the product productId as an argument
   - addProductToCart should get the correct product based on the productId
   - addProductToCart should then increase the product's quantity
   - if the product is not already in the cart, add it to the cart
 */
 function addProductToCart(productId){
- products.quantity+=1;
- cart.push(products)
- }
-addProductToCart(100);
+  
+  if(productId === productOne.productId){
+  cart.push(productOne)
+  productOne.quantity+=1
+}
+else if(productId === productTwo.productId){
+  cart.push(productTwo)
+  productTwo.quantity+=1
+}
+else if (productId === productThree.productId){
+  cart.push(productThree)
+  productThree.quantity+=1
+}
+else{
+  console.log("ruvvvv")
+}
+
+}
+addProductToCart(100)
+
+
 /* Create a function named increaseQuantity that takes in the productId as an argument
   - increaseQuantity should get the correct product based on the productId
   - increaseQuantity should then increase the product's quantity
 */
-function increaseQuantity(_productId){
-  quantity+=1
+function increaseQuantity(productId){
+  if(productId === productOne.productId){
+    productOne.quantity+=1
+  }
+  else if(productId === productTwo.productId){
+    productTwo.quantity+=1
+  }
+  else if (productId === productThree.productId){
+    productThree.quantity+=1
+  }
+  else{
+    console.log("ruvvvv")
+  }
 }
-increaseQuantity(100);
+// increaseQuantity(100)
 /* Create a function named decreaseQuantity that takes in the productId as an argument
   - decreaseQuantity should get the correct product based on the productId
   - decreaseQuantity should decrease the quantity of the product
   - if the function decreases the quantity to 0, the product is removed from the cart
 */
-  function decreaseQuantity(_productId){
-    quantity-=1
-    if (quantity==0){
+function decreaseQuantity(productId){
+  // if(productId === productOne.productId){
+  //   productOne.quantity-=1
+  // }
+  // else if(productId === productTwo.productId){
+  //   productTwo.quantity-=1
+  // }
+  // else if (productId === productThree.productId){
+  //   productThree.quantity-=1
+  // }
+   
+  //   else{
+  //       console.log("ruvvvv")
+      
+  //   }
+
+    if (productOne.quantity===1){
       cart.pop()
     }
-  }
+}
+decreaseQuantity(100)
+
+
+   
+  
 /* Create a function named removeProductFromCart that takes in the productId as an argument
   - removeProductFromCart should get the correct product based on the productId
   - removeProductFromCart should update the product quantity to 0
