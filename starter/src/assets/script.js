@@ -48,23 +48,29 @@ let products = [productOne,productTwo,productThree]
 function addProductToCart(productId){
   
   if(productId === productOne.productId){
-  cart.push(productOne)
+  while(cart.indexOf(productOne)==-1){
+    cart.push(productOne)
+  }
   productOne.quantity+=1
 }
 else if(productId === productTwo.productId){
-  cart.push(productTwo)
+  while(cart.indexOf(productTwo)==-1){
+    cart.push(productTwo)
+  }
   productTwo.quantity+=1
 }
 else if (productId === productThree.productId){
-  cart.push(productThree)
+  while(cart.indexOf(productThree)==-1){
+    cart.push(productThree)
+  }
   productThree.quantity+=1
 }
 else{
-  console.log("ruvvvv")
+  console.log("something wrong with code")
 }
 
 }
-addProductToCart(100)
+// addProductToCart(100)
 
 
 /* Create a function named increaseQuantity that takes in the productId as an argument
@@ -85,7 +91,7 @@ function increaseQuantity(productId){
     console.log("ruvvvv")
   }
 }
-increaseQuantity(100)
+// increaseQuantity(100)
 
 /* Create a function named decreaseQuantity that takes in the productId as an argument
   - decreaseQuantity should get the correct product based on the productId
@@ -108,11 +114,11 @@ function decreaseQuantity(productId){
       
     }
 
-    if (productOne.quantity===0){
+    if (productOne.quantity===0 || productTwo.quantity===0 || productThree.quantity===0){
       cart.pop()
     }
 }
-decreaseQuantity(100)
+// decreaseQuantity(100)
 
 
    
@@ -123,15 +129,33 @@ decreaseQuantity(100)
   - removeProductFromCart should remove the product from the cart
 */
 function removeProductFromCart(productId){
-   products.quantity =0
-  cart.pop()
+
+  
+  if(productId === productOne.productId){
+    productOne.quantity = 0
+    cart.pop()
+  }
+  else if(productId === productTwo.productId){
+    productTwo.quantity = 0
+    cart.pop()
+  }
+  else if (productId === productThree.productId){
+    productThree.quantity = 0
+    cart.pop()
+  }
+  
 }
 /* Create a function named cartTotal that has no parameters
   - cartTotal should iterate through the cart to get the total of all products
   - cartTotal should return the sum of the products in the cart
 */
+// let totalPaid = 0;
 function cartTotal(){
-  // The whole of the buttons only started working after i declared the cartTotal Function
+  // I noticed all the buttons on the page only started working after i declared the cartTotal Function
+  // cart.forEach((products)=>{
+  //   totalPaid += productOne.price * productOne.quantity
+  // })
+  // console.log(totalPaid)
 }
 /* Create a function called emptyCart that empties the products from the cart */
 function emptyCart(){
