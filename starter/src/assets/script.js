@@ -109,12 +109,7 @@ function decreaseQuantity(productId){
     productThree.quantity-=1
   }
    
-    else{
-        console.log("ruvvvv")
-      
-    }
-
-    if (productOne.quantity===0 || productTwo.quantity===0 || productThree.quantity===0){
+    else if(productOne.quantity===0 || productTwo.quantity===0 || productThree.quantity===0){
       cart.pop()
     }
 }
@@ -149,13 +144,19 @@ function removeProductFromCart(productId){
   - cartTotal should iterate through the cart to get the total of all products
   - cartTotal should return the sum of the products in the cart
 */
-// let totalPaid = 0;
+  let totalPaid = 0;
+    let grandTotal = 0;
+    
 function cartTotal(){
   // I noticed all the buttons on the page only started working after i declared the cartTotal Function
-  // cart.forEach((products)=>{
-  //   totalPaid += productOne.price * productOne.quantity
-  // })
-  // console.log(totalPaid)
+  for(let i=0; i<cart.length; i++){
+    let grandTotal = cart[i].quantity * cart[i].price
+    totalPaid+= grandTotal
+    
+    // (productOne.quantity*productOne.price)+(productTwo.quantity*productTwo.price)+(productThree.quantity*productThree.price)
+  }
+  console.log()
+  return totalPaid
 }
 /* Create a function called emptyCart that empties the products from the cart */
 function emptyCart(){
@@ -165,8 +166,9 @@ function emptyCart(){
   - pay will return a negative number if there is a remaining balance
   - pay will return a positive number if money should be returned to customer
 */
-function pay(){
 
+function pay(amount){
+//  return amount - totalPaid
 }
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
 
