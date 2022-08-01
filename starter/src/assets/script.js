@@ -46,29 +46,36 @@ let products = [productOne,productTwo,productThree]
   - if the product is not already in the cart, add it to the cart
 */
 function addProductToCart(productId){
-  
-  if(productId === productOne.productId){
-  while(cart.indexOf(productOne)==-1){
-    cart.push(productOne)
+  for (let product of products){
+    if (productId==product.productId){
+      while(cart.indexOf(product)==-1){
+            cart.push(product)
+    }
+    product.quantity+=1
   }
-  productOne.quantity+=1
-}
-else if(productId === productTwo.productId){
-  while(cart.indexOf(productTwo)==-1){
-    cart.push(productTwo)
-  }
-  productTwo.quantity+=1
-}
-else if (productId === productThree.productId){
-  while(cart.indexOf(productThree)==-1){
-    cart.push(productThree)
-  }
-  productThree.quantity+=1
-}
-else{
-  console.log("something wrong with code")
-}
+//   if(productId === productOne.productId){
+//   while(cart.indexOf(productOne)==-1){
+//     cart.push(productOne)
+//   }
+//   productOne.quantity+=1
+// }
+// else if(productId === productTwo.productId){
+//   while(cart.indexOf(productTwo)==-1){
+//     cart.push(productTwo)
+//   }
+//   productTwo.quantity+=1
+// }
+// else if (productId === productThree.productId){
+//   while(cart.indexOf(productThree)==-1){
+//     cart.push(productThree)
+//   }
+//   productThree.quantity+=1
+// }
+// else{
+//   console.log("something wrong with code")
+// }
 
+}
 }
 // addProductToCart(100)
 
@@ -78,18 +85,24 @@ else{
   - increaseQuantity should then increase the product's quantity
 */
 function increaseQuantity(productId){
-  if(productId === productOne.productId){
-    productOne.quantity+=1
+ 
+ for (let product of products){
+  if(productId == product.productId){
+    product.quantity+=1
   }
-  else if(productId === productTwo.productId){
-    productTwo.quantity+=1
-  }
-  else if (productId === productThree.productId){
-    productThree.quantity+=1
-  }
-  else{
-    console.log("ruvvvv")
-  }
+ }
+  // if(productId === productOne.productId){
+  //   productOne.quantity+=1
+  // }
+  // else if(productId === productTwo.productId){
+  //   productTwo.quantity+=1
+  // }
+  // else if (productId === productThree.productId){
+  //   productThree.quantity+=1
+  // }
+  // else{
+  //   console.log("ruvvvv")
+  // }
 }
 // increaseQuantity(100)
 
@@ -99,20 +112,29 @@ function increaseQuantity(productId){
   - if the function decreases the quantity to 0, the product is removed from the cart
 */
 function decreaseQuantity(productId){
-  if(productId === productOne.productId){
-    productOne.quantity-=1
-  }
-  else if(productId === productTwo.productId){
-    productTwo.quantity-=1
-  }
-  else if (productId === productThree.productId){
-    productThree.quantity-=1
-  }
-   
-    else if(productOne.quantity===0 || productTwo.quantity===0 || productThree.quantity===0){
-      cart.pop()
+  for (let product of products){
+    if(productId == product.productId){
+      product.quantity-=1
     }
-}
+  }
+  // if(productId === productOne.productId){
+  //   productOne.quantity-=1
+  // }
+  // else if(productId === productTwo.productId){
+  //   productTwo.quantity-=1
+  // }
+  // else if (productId === productThree.productId){
+  //   productThree.quantity-=1
+  // }
+  for(let carts of cart){
+    if(carts.quantity===0){
+     cart.pop()
+    }
+  }
+  
+  
+ }   
+   
 // decreaseQuantity(100)
 
 
@@ -168,7 +190,7 @@ function emptyCart(){
 */
 
 function pay(amount){
-//  return amount - totalPaid
+ return amount - cartTotal()
 }
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
 
