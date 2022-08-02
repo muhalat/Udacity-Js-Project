@@ -102,7 +102,7 @@ function cartTotal(){
   // I noticed all the buttons on the page only started working after i declared the cartTotal Function
   for(let i=0; i<cart.length; i++){
      grandTotal= cart[i].quantity * cart[i].price
-    totalPaid+= grandTotal    
+    totalPaid += grandTotal    
   }
   return totalPaid
 }
@@ -115,7 +115,7 @@ function emptyCart(){
   - pay will return a positive number if money should be returned to customer
 */
 function pay(amount){
- return  amount - cartTotal() 
+ return  amount-totalPaid 
 }
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
 /* The following is for running unit tests. 
