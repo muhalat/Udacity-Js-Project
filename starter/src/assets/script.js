@@ -172,9 +172,8 @@ function removeProductFromCart(productId){
 function cartTotal(){
   // I noticed all the buttons on the page only started working after i declared the cartTotal Function
   for(let i=0; i<cart.length; i++){
-    let grandTotal = cart[i].quantity * cart[i].price
-    totalPaid+= grandTotal
-    
+     grandTotal= cart[i].quantity * cart[i].price
+    totalPaid+= grandTotal    
     // (productOne.quantity*productOne.price)+(productTwo.quantity*productTwo.price)+(productThree.quantity*productThree.price)
   }
   console.log()
@@ -182,7 +181,10 @@ function cartTotal(){
 }
 /* Create a function called emptyCart that empties the products from the cart */
 function emptyCart(){
-
+  
+    cart.length=0
+  
+  console.log("supposseed")
 }
 /* Create a function named pay that takes in an amount as an argument
   - pay will return a negative number if there is a remaining balance
@@ -190,7 +192,7 @@ function emptyCart(){
 */
 
 function pay(amount){
- return amount - cartTotal()
+ return    amount - cartTotal() 
 }
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
 
