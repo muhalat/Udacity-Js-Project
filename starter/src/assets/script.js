@@ -52,7 +52,6 @@ function addProductToCart(productId){
     }
   }
 }
-
 function getProductById(productId) {
   for (let i = 0; i < products.length; i++) {
     if (products[i].productId === productId) {
@@ -66,12 +65,9 @@ function getProductById(productId) {
   - increaseQuantity should then increase the product's quantity
 */
 function increaseQuantity(productId){
- const item = getProductById(productId)
+  const item = getProductById(productId)
   item.quantity+=1
-
-  }
- 
-
+}
 /* Create a function named decreaseQuantity that takes in the productId as an argument
   - decreaseQuantity should get the correct product based on the productId
   - decreaseQuantity should decrease the quantity of the product
@@ -79,71 +75,38 @@ function increaseQuantity(productId){
 */
 function decreaseQuantity(productId){
   const item = getProductById(productId)
-     
-     
-
-      if (item.quantity > 1){
-         item.quantity-=1;
-         }
-      else{
-        removeProductFromCart(productId)
-      }
-  // for(let carts of cart){
-  //   if(carts.quantity===0){
-  //    cart.spl()
-  //   }
-  // }
- }   
+    if (item.quantity > 1){
+      item.quantity-=1;
+    }
+    else{
+      removeProductFromCart(productId)
+    }
+}   
 /* Create a function named removeProductFromCart that takes in the productId as an argument
   - removeProductFromCart should get the correct product based on the productId
   - removeProductFromCart should update the product quantity to 0
   - removeProductFromCart should remove the product from the cart
 */
 function removeProductFromCart(productId){
-  
   const item = getProductById(productId)
   item.quantity = 0;
   cart.splice(cart.indexOf(item),1)
-//  for(const product of products){
-//     if(productId === product.productId){
-//         product.quantity = 0
-//         cart.pop()
-//     }
 }
-//   }
-// }}
-// function removeProductFromCart(productid){
-//   const item = getProduct(productid);
-//   item.quantity =0;
-//   cart.splice(cart.indexOf(item), 1);
-//   };
+
 /* Create a function named cartTotal that has no parameters
   - cartTotal should iterate through the cart to get the total of all products
   - cartTotal should return the sum of the products in the cart
 */
-
 function cartTotal(){
-// I noticed all the buttons on the page only started working after i declared the cartTotal Function
- let totalPaid = 0;
-let grandTotal = 0;
-
+  // I noticed all the buttons on the page only started working after i declared the cartTotal Function
+  let totalPaid = 0;
+  let grandTotal = 0;
   cart.map((cart) => {
     grandTotal= cart.quantity * cart.price
     totalPaid += grandTotal   
   });
   return totalPaid
 }
-  
- 
-
-// function cartTotal() {
-//   let total = 0;
-//   cart.map((product) => {
-//     let productTotal = product.quantity * product.price;
-//     total += productTotal;
-//   });
-//   return Number(total);
-// }
 /* Create a function called emptyCart that empties the products from the cart */
 function emptyCart(){
   cart.length=0
