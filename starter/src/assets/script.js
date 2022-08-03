@@ -1,4 +1,3 @@
-
 /* Create 3 or more product objects using object literal notation 
   Each product should include five properties
   - name: name of product (string)
