@@ -68,6 +68,16 @@ function increaseQuantity(productId){
   const item = getProductById(productId)
   item.quantity+=1
 }
+/* Create a function named removeProductFromCart that takes in the productId as an argument
+  - removeProductFromCart should get the correct product based on the productId
+  - removeProductFromCart should update the product quantity to 0
+  - removeProductFromCart should remove the product from the cart
+*/
+function removeProductFromCart(productId){
+  const item = getProductById(productId)
+  item.quantity = 0;
+  cart.splice(cart.indexOf(item),1)
+}
 /* Create a function named decreaseQuantity that takes in the productId as an argument
   - decreaseQuantity should get the correct product based on the productId
   - decreaseQuantity should decrease the quantity of the product
@@ -82,17 +92,6 @@ function decreaseQuantity(productId){
       removeProductFromCart(productId)
     }
 }   
-/* Create a function named removeProductFromCart that takes in the productId as an argument
-  - removeProductFromCart should get the correct product based on the productId
-  - removeProductFromCart should update the product quantity to 0
-  - removeProductFromCart should remove the product from the cart
-*/
-function removeProductFromCart(productId){
-  const item = getProductById(productId)
-  item.quantity = 0;
-  cart.splice(cart.indexOf(item),1)
-}
-
 /* Create a function named cartTotal that has no parameters
   - cartTotal should iterate through the cart to get the total of all products
   - cartTotal should return the sum of the products in the cart
